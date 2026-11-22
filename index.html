@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Ángel Pérez Castillo · Filmmaker</title>
+  <meta name="description" content="Portfolio de Ángel Pérez Castillo (Dream Films), filmmaker y fotógrafo en Córdoba: bodas, eventos, artes escénicas, retrato y producto.">
+  <meta name="author" content="Ángel Pérez Castillo">
+  <meta name="theme-color" content="#0b0b0c">
+  <link rel="canonical" href="https://dreamfilms-oficial.github.io/">
+
+  <!-- Vista previa al compartir (WhatsApp, Instagram, LinkedIn…) -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:url" content="https://dreamfilms-oficial.github.io/">
+  <meta property="og:title" content="Ángel Pérez Castillo · Filmmaker">
+  <meta property="og:description" content="Filmmaker y fotógrafo · Dream Films. Bodas, eventos, artes escénicas, retrato y producto.">
+  <meta property="og:image" content="https://dreamfilms-oficial.github.io/img/_web/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icono-180.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:opsz,wght@9..40,300..600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilos.css">
+
+  <script src="contenido.js" defer></script>
+  <script src="fotos.js" defer></script>
+  <script src="js/app.js" defer></script>
+</head>
+<body>
+  <a class="saltar" href="#proyectos">Saltar al contenido</a>
+
+  <div class="borrador" id="borrador" hidden></div>
+
+  <header class="cabecera" id="cabecera">
+    <a class="cabecera__marca" href="#inicio" data-marca>Ángel Pérez Castillo</a>
+    <button class="cabecera__menu" id="botonMenu" aria-expanded="false" aria-controls="menu">
+      <span></span><span></span><span class="visualmente-oculto">Menú</span>
+    </button>
+    <nav class="menu" id="menu" aria-label="Principal">
+      <a href="#proyectos">Proyectos</a>
+      <a href="#sobre-mi">Sobre mí</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- PORTADA -->
+    <section class="portada" id="inicio" aria-label="Portada">
+      <div class="portada__fondo" id="portadaFondo"></div>
+      <div class="portada__velo"></div>
+      <div class="banda banda--arriba" aria-hidden="true"></div>
+      <div class="banda banda--abajo" aria-hidden="true"></div>
+
+      <div class="portada__texto">
+        <p class="portada__profesion" data-profesion>Filmmaker</p>
+        <h1 class="portada__titulo" id="portadaTitulo">Ángel Pérez Castillo</h1>
+        <p class="portada__subtitulo" id="portadaSubtitulo" hidden></p>
+      </div>
+
+      <div class="portada__pie">
+        <button class="boton-reel" id="botonReel" type="button">
+          <span class="boton-reel__icono" aria-hidden="true"></span>
+          Ver showreel
+        </button>
+        <a class="portada__bajar" href="#proyectos">Ver fotografías <span aria-hidden="true">↓</span></a>
+      </div>
+    </section>
+
+    <!-- PROYECTOS -->
+    <section class="bloque proyectos" id="proyectos" aria-labelledby="tituloProyectos">
+      <header class="bloque__cabecera">
+        <p class="etiqueta revelar">Trabajos</p>
+        <h2 class="bloque__titulo revelar" id="tituloProyectos">Proyectos</h2>
+        <nav class="filtros revelar" id="filtros" aria-label="Secciones"></nav>
+      </header>
+      <div id="listaSecciones"></div>
+    </section>
+
+    <!-- PRÓXIMAMENTE: CORTOMETRAJES (se rellena desde contenido.js) -->
+    <section class="proximo" id="cortometrajes" aria-labelledby="tituloProximo" hidden></section>
+
+    <!-- SOBRE MÍ -->
+    <section class="bloque sobre" id="sobre-mi" aria-labelledby="tituloSobre">
+      <div class="sobre__foto revelar" id="sobreFoto"></div>
+      <div class="sobre__texto">
+        <p class="etiqueta revelar">Quién hay detrás de la cámara</p>
+        <h2 class="bloque__titulo revelar" id="tituloSobre">Sobre mí</h2>
+        <div class="sobre__parrafos revelar" id="sobreTexto"></div>
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section class="bloque contacto" id="contacto" aria-labelledby="tituloContacto">
+      <p class="etiqueta revelar">¿Tienes un proyecto en mente?</p>
+      <h2 class="contacto__titulo revelar" id="tituloContacto">Hablemos</h2>
+      <div class="contacto__enlaces revelar" id="contactoEnlaces"></div>
+    </section>
+  </main>
+
+  <footer class="pie">
+    <span>© <span id="anio"></span> <span data-nombre>Ángel Pérez Castillo</span><span data-productora></span></span>
+    <a href="#inicio">Volver arriba ↑</a>
+  </footer>
+
+  <!-- Ventana de proyecto -->
+  <div class="proyecto" id="ventanaProyecto" role="dialog" aria-modal="true" aria-labelledby="proyectoTitulo" hidden>
+    <div class="proyecto__panel" id="proyectoPanel" tabindex="-1">
+      <button class="cerrar" type="button" data-cerrar aria-label="Cerrar proyecto"></button>
+      <div id="proyectoContenido"></div>
+    </div>
+  </div>
+
+  <!-- Visor de fotos y vídeo a pantalla completa -->
+  <div class="visor" id="visor" role="dialog" aria-modal="true" aria-label="Visor" hidden>
+    <button class="cerrar" type="button" data-cerrar-visor aria-label="Cerrar"></button>
+    <button class="visor__flecha visor__flecha--izq" type="button" data-visor-ant aria-label="Anterior"></button>
+    <div class="visor__escena" id="visorEscena"></div>
+    <button class="visor__flecha visor__flecha--der" type="button" data-visor-sig aria-label="Siguiente"></button>
+    <p class="visor__contador" id="visorContador"></p>
+  </div>
+
+  <noscript><p class="sin-js">Esta web necesita JavaScript activado para mostrar los proyectos.</p></noscript>
+</body>
+</html>

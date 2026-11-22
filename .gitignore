@@ -1,0 +1,12 @@
+# Los originales de las fotos se quedan solo en este ordenador
+# (en la web solo se publican las versiones de img/)
+fotos/
+
+# Sistema
+Thumbs.db
+desktop.ini
+.DS_Store
+__pycache__/
+
+# Configuración local del editor
+.claude/
