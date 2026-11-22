@@ -5,6 +5,7 @@ echo === 1/2  Preparando fotos ===
 python herramientas\preparar_fotos.py || goto error
 echo.
 echo === 2/2  Subiendo la web a GitHub ===
+python herramientasersion.py
 git add -A
 git commit -m "Actualizar web %date% %time:~0,5%" || echo (No habia cambios nuevos)
 git push || goto error
