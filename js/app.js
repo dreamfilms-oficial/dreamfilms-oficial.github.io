@@ -621,7 +621,17 @@
       boton.setAttribute("aria-expanded", String(abierto));
       menu.classList.toggle("menu--abierto", abierto);
       document.body.classList.toggle("bloqueado", abierto);
+      document.body.classList.toggle("menu-abierto", abierto);
     };
+    // Numeración y pie del menú (solo se ve en móvil)
+    $$("a", menu).forEach((a, i) => a.insertAdjacentHTML("afterbegin", `<span class="menu__num">${dos(i + 1)}</span>`));
+    const ig = lleno(C.instagram) ? String(C.instagram).replace(/^@/, "") : "";
+    menu.insertAdjacentHTML("beforeend", `<div class="menu__pie">
+      ${lleno(C.correo) ? `<a class="menu__dato" href="mailto:${esc(C.correo)}">${esc(C.correo)}</a>` : ""}
+      ${ig ? `<a class="menu__dato" href="https://www.instagram.com/${encodeURIComponent(ig)}/" target="_blank" rel="noopener">@${esc(ig)}</a>` : ""}
+      ${lleno(C.logo) ? `<img class="menu__logo" src="${esc(C.logo)}" alt="" width="90" height="40">` : ""}
+    </div>`);
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape" && menu.classList.contains("menu--abierto")) poner(false); });
     boton.addEventListener("click", () => poner(boton.getAttribute("aria-expanded") !== "true"));
     $$("a", menu).forEach((a) => a.addEventListener("click", () => poner(false)));
   }
